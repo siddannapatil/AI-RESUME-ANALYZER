@@ -1,0 +1,14 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Uploaded resumes (keep folder, ignore files)
+App/Uploaded_Resumes/*
+!App/Uploaded_Resumes/.gitkeep
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Virtual environment
+venv/
+venvapp/

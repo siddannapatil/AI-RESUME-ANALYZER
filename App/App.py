@@ -16,6 +16,7 @@ import io,random
 import plotly.express as px # to create visualisations at the admin session
 import plotly.graph_objects as go
 from geopy.geocoders import Nominatim
+
 # libraries used to parse the pdf files
 from pyresparser import ResumeParser
 from pdfminer3.layout import LAParams, LTTextBox
@@ -29,6 +30,8 @@ from PIL import Image
 from Courses import ds_course,web_course,android_course,ios_course,uiux_course,resume_videos,interview_videos
 import nltk
 nltk.download('stopwords')
+
+
 
 
 ###### Preprocessing functions ######
@@ -136,7 +139,7 @@ def run():
     st.sidebar.markdown("# Choose Something...")
     activities = ["User", "Feedback", "About", "Admin"]
     choice = st.sidebar.selectbox("Choose among the given options:", activities)
-    link = '<b>Built with 🤍 by <a href="https://dnoobnerd.netlify.app/" style="text-decoration: none; color: #021659;">Deepak Padhi</a></b>' 
+    link = '<b>Built with 🤍 by <a href="" style="text-decoration: none; color: yellow;">AD16</a></b>' 
     st.sidebar.markdown(link, unsafe_allow_html=True)
     st.sidebar.markdown('''
         <!-- site visitors -->
@@ -420,7 +423,7 @@ def run():
                     resume_score = resume_score+6
                     st.markdown('''<h5 style='text-align: left; color: #1ed760;'>[+] Awesome! You have added Objective/Summary</h4>''',unsafe_allow_html=True)                
                 else:
-                    st.markdown('''<h5 style='text-align: left; color: #000000;'>[-] Please add your career objective, it will give your career intension to the Recruiters.</h4>''',unsafe_allow_html=True)
+                    st.markdown('''<h5 style='text-align: left; color: #ff0000;'>[-] Please add your career objective, it will give your career intension to the Recruiters.</h4>''',unsafe_allow_html=True)
 
                 if 'Education' or 'School' or 'College'  in resume_text:
                     resume_score = resume_score + 12
@@ -504,7 +507,7 @@ def run():
                     resume_score = resume_score + 12
                     st.markdown('''<h5 style='text-align: left; color: #1ed760;'>[+] Awesome! You have added your Certifications </h4>''',unsafe_allow_html=True)
                 else:
-                    st.markdown('''<h5 style='text-align: left; color: #000000;'>[-] Please add Certifications. It will show that you have done some specialization for the required position.</h4>''',unsafe_allow_html=True)
+                    st.markdown('''<h5 style='text-align: left; color: #0000;'>[-] Please add Certifications. It will show that you have done some specialization for the required position.</h4>''',unsafe_allow_html=True)
 
                 if 'PROJECTS' in resume_text:
                     resume_score = resume_score + 19
@@ -519,7 +522,8 @@ def run():
                     resume_score = resume_score + 19
                     st.markdown('''<h5 style='text-align: left; color: #1ed760;'>[+] Awesome! You have added your Projects</h4>''',unsafe_allow_html=True)
                 else:
-                    st.markdown('''<h5 style='text-align: left; color: #000000;'>[-] Please add Projects. It will show that you have done work related the required position or not.</h4>''',unsafe_allow_html=True)
+                    st.markdown('''<h5 style='text-align: left; color: #ff0000;'>[-] Please add your career objective, it will give your career intension to the Recruiters.</h4>''',unsafe_allow_html=True)
+                    st.markdown('''<h5 style='text-align: left; color: #ff0000;'>[-] Please add Projects. It will show that you have done work related the required position or not.</h4>''',unsafe_allow_html=True)
 
                 st.subheader("**Resume Score 📝**")
                 
@@ -629,34 +633,56 @@ def run():
     
     ###### CODE FOR ABOUT PAGE ######
     elif choice == 'About':   
-
         st.subheader("**About The Tool - AI RESUME ANALYZER**")
+        st.markdown("""
+                    <div style="text-align: justify; font-size: 16px; line-height: 1.6;">
+                    <p>
+                    <b>AI Resume Analyzer</b> is an intelligent tool powered by 
+                    <b>Natural Language Processing (NLP)</b> and <b>Machine Learning</b>.
+                    It automatically parses resume information, extracts key data like skills, experience, and education, 
+                    and analyzes them through keyword matching and clustering.  
+                    The system then provides smart <b>recommendations</b>, <b>predictions</b>, and <b>analytics</b> 
+                    to help applicants understand their resume performance.
+                    </p>
+                    <h4>How to use it:</h4>
+                    <p>
+                    <b>User -</b><br/>
+                    In the sidebar, select yourself as <b>User</b>, fill the required fields, and upload your resume in PDF format.<br/>
+                    Sit back and relax — the tool will analyze your resume automatically and display insightful results instantly.
+                    </p>
+                    <p>
+                    <b>Feedback -</b><br/>
+                    Users can share feedback or suggestions about the tool to help improve its features and usability.
+                    </p>
+                    <p>
+                    <b>Admin -</b><br/>
+                    For login, use <b>admin</b> as the username and <b>admin@resume-analyzer</b> as the password.<br/>
+                    Once logged in, the admin can view uploaded resumes, analyze reports, and monitor all system operations.
+                    </p>
+                    <h4>Main Features:</h4>
+                    <ul>
+                    <li>⚙️ Automated Resume Parsing using NLP.</li>
+                    <li>🔍 Keyword Extraction and Skill Clustering.</li>
+                    <li>📊 Smart Scoring & Insights for resume evaluation.</li>
+                    <li>🧠 Machine Learning–based Recommendations.</li>
+                    <li>💡 Actionable Feedback to improve resume quality.</li>
+                    </ul>
+                    <br/>
+                    <p>
+                    <b>Developed by:</b><br/>
+                    <a href="https://github.com/siddannapatil" target="_blank" 
+                    style="text-decoration: none; color: rgb(255, 255, 0); font-weight: bold;">
+                    AD16 TEAM Under the guidance of 
+                    </a> 
+                    &nbsp;|&nbsp;
+                    <a href="https://www.linkedin.com/in/geluvaraj-b-755947153/?originalSubdomain=in" target="_blank" 
+                    style="text-decoration: none; color: lightgrey; font-weight: bold;">
+                    GELUVARAJ.B
+                    </a>
+                    </p>
+                    </div>
+                    """, unsafe_allow_html=True)
 
-        st.markdown('''
-
-        <p align='justify'>
-            A tool which parses information from a resume using natural language processing and finds the keywords, cluster them onto sectors based on their keywords. And lastly show recommendations, predictions, analytics to the applicant based on keyword matching.
-        </p>
-
-        <p align="justify">
-            <b>How to use it: -</b> <br/><br/>
-            <b>User -</b> <br/>
-            In the Side Bar choose yourself as user and fill the required fields and upload your resume in pdf format.<br/>
-            Just sit back and relax our tool will do the magic on it's own.<br/><br/>
-            <b>Feedback -</b> <br/>
-            A place where user can suggest some feedback about the tool.<br/><br/>
-            <b>Admin -</b> <br/>
-            For login use <b>admin</b> as username and <b>admin@resume-analyzer</b> as password.<br/>
-            It will load all the required stuffs and perform analysis.
-        </p><br/><br/>
-
-        <p align="justify">
-            Built with 🤍 by 
-            <a href="https://dnoobnerd.netlify.app/" style="text-decoration: none; color: grey;">Deepak Padhi</a> through 
-            <a href="https://www.linkedin.com/in/mrbriit/" style="text-decoration: none; color: grey;">Dr Bright --(Data Scientist)</a>
-        </p>
-
-        ''',unsafe_allow_html=True)  
 
 
     ###### CODE FOR ADMIN SIDE (ADMIN) ######
@@ -679,7 +705,7 @@ def run():
                 
                 ### Total Users Count with a Welcome Message
                 values = plot_data.Idt.count()
-                st.success("Welcome Deepak ! Total %d " % values + " User's Have Used Our Tool : )")                
+                st.success("Welcome TEAMAD16! Total %d " % values + " User's Have Used Our Tool : )")                
                 
                 ### Fetch user data from user_data(table) and convert it into dataframe
                 cursor.execute('''SELECT ID, sec_token, ip_add, act_name, act_mail, act_mob, convert(Predicted_Field using utf8), Timestamp, Name, Email_ID, resume_score, Page_no, pdf_name, convert(User_level using utf8), convert(Actual_skills using utf8), convert(Recommended_skills using utf8), convert(Recommended_courses using utf8), city, state, country, latlong, os_name_ver, host_name, dev_user from user_data''')
