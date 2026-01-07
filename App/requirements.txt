@@ -3,7 +3,11 @@ pandas
 numpy
 scikit-learn
 PyPDF2
+pdfminer3
 docx2txt
 nltk
-pymysql
-geocoder
+PyMySQL
+plotly
+geopy
+Pillow
+streamlit-tags
